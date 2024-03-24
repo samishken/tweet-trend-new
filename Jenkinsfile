@@ -17,6 +17,7 @@ pipeline {
                 echo "------------ build completed ---------"              
             }
         }
+
         stage("Jar Publish") {
             steps {
                 script {
@@ -28,7 +29,7 @@ pipeline {
                         "files": [
                             {
                             "pattern": "jarstaging/(*)",
-                            "target": "ttrend-libs-release-local/{1}/{1}",
+                            "target": "maven-libs-release-local/{1}/{1}",
                             "flat": "false",
                             "props" : "${properties}",
                             "exclusions": [ "*.sha1", "*.md5"]
@@ -40,7 +41,6 @@ pipeline {
                     buildInfo.env.collect()
                     server.publishBuildInfo(buildInfo)
                     echo '<--------------- Jar Publish Ended --------------->'  
-                
                 }
             }   
         }
