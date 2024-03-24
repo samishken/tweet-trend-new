@@ -37,6 +37,7 @@ pipeline {
                             }
                         ]
                     }"""
+                    echo '<--------------- Jar Publish Started 3 --------------->'
                     def buildInfo = server.upload(uploadSpec)
                     buildInfo.env.collect()
                     server.publishBuildInfo(buildInfo)
