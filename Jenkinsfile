@@ -24,6 +24,7 @@ pipeline {
                 script {
                     echo '<--------------- Jar Publish Started --------------->'
                     def server = Artifactory.newServer url:registry+"/artifactory" ,  credentialsId:"jfrog"
+                    echo '<--------------- Jar Publish Started 2 --------------->'
                     def properties = "buildid=${env.BUILD_ID},commitid=${GIT_COMMIT}";
                     def uploadSpec = """{
                         "files": [
