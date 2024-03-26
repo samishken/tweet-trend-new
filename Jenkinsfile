@@ -18,7 +18,7 @@ pipeline {
             }
         }
 
-        stage("Jar Publish") {
+        stage("Jar Publish test") {
             steps {
                 script {
                     echo '<--------------- Jar Publish Started --------------->'
