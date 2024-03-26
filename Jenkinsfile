@@ -1,5 +1,5 @@
 def registry = 'https://sambooo.jfrog.io/'
-def imageName = 'samboo.jfrog.io/samboo-docker-local/ttrend'
+def imageName = 'sambooo.jfrog.io/samboo-docker-local/ttrend'
 def version   = '2.1.2'
 
 pipeline {
