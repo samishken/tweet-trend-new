@@ -1,3 +1,4 @@
+// Test
 def registry = 'https://sambooo.jfrog.io/'
 def imageName = 'sambooo.jfrog.io/samboo-docker-local/ttrend'
 def version   = '2.1.2'
