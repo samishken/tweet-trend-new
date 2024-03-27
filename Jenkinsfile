@@ -1,4 +1,4 @@
-// Test2 03/27/2024
+// Test3 03/27/2024
 def registry = 'https://sambooo.jfrog.io/'
 def imageName = 'sambooo.jfrog.io/samboo-docker-local/ttrend'
 def version   = '2.1.2'
