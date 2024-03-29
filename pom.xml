@@ -20,6 +20,11 @@
 		 <maven-jar-plugin.version>3.1.1</maven-jar-plugin.version>
 	</properties>
 
+	<properties>
+		<sonar.organization>samboo01-key</sonar.organization>
+		<sonar.host.url>https://sonarcloud.io</sonar.host.url>
+	</properties>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
