@@ -71,7 +71,7 @@ pipeline {
         stage ("Deploy"){
             steps {
                 script {
-                    sh "chmod +x -R ${env.WORKSPACE}"
+                    sh "chmod +x ./deploy.sh"
                     sh './deploy.sh'
                 }
             }
