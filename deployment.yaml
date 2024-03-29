@@ -4,7 +4,7 @@ metadata:
   name: samboo
   namespace: samboo-ns
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app:  samboo
