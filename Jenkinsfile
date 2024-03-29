@@ -24,7 +24,7 @@ pipeline {
 
         stage('SonarQube analysis') {
             environment {
-                scannerHome = tool 'samboo-sonar-scanner'
+                scannerHome = tool 'samboo-sonar-scanner'  // configured on Manage Jenkins under Tools
             }
             steps{
                 withSonarQubeEnv('samboo-sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
