@@ -3,7 +3,6 @@ def registry = 'https://sambooo.jfrog.io/'
 def imageName = 'sambooo.jfrog.io/samboo-docker-local/ttrend'
 def version   = '2.1.2'
 
-
 pipeline {
     agent {
         node {
@@ -23,25 +22,16 @@ pipeline {
             }
         }
 
-        stage ('Code Quality scan')  {
+        stage('SonarQube analysis') {
             environment {
                 scannerHome = tool 'samboo-sonar-scanner'  // configured on Manage Jenkins under Tools
             }
-            withSonarQubeEnv('SonarQube') {
-                sh "${scannerHome}/bin/sonar-scanner"
+            steps{
+                withSonarQubeEnv('Sonarqube') { // If you have configured more than one global server connection, you can specify its name
+                    sh "${scannerHome}/bin/sonar-scanner"
+                }
             }
         }
-
-        // stage('SonarQube analysis') {
-        //     environment {
-        //         scannerHome = tool 'samboo-sonar-scanner'  // configured on Manage Jenkins under Tools
-        //     }
-        //     steps{
-        //         withSonarQubeEnv('Sonarqube') { // If you have configured more than one global server connection, you can specify its name
-        //             sh "${scannerHome}/bin/sonar-scanner"
-        //         }
-        //     }
-        // }
 
         // stage("Quality Gate"){
         //     steps {
