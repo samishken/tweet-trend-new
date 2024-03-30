@@ -27,11 +27,22 @@ pipeline {
                 scannerHome = tool 'samboo-sonar-scanner'  // configured on Manage Jenkins under Tools
             }
             steps{
-                withSonarQubeEnv('Sonarqube') { // If you have configured more than one global server connection, you can specify its name
+                withSonarQubeEnv('SonarQube') { // If you have configured more than one global server connection, you can specify its name
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
+
+        // stage('SonarQube analysis') {
+        //     environment {
+        //         scannerHome = tool 'samboo-sonar-scanner'
+        //     }
+        //     steps{
+        //         withSonarQubeEnv('valaxy-sonarqube-server') { // If you have configured more than one global server connection, you can specify its name
+        //             sh "${scannerHome}/bin/sonar-scanner"
+        //         }
+        //     }
+        // }
 
         // stage("Quality Gate"){
         //     steps {
