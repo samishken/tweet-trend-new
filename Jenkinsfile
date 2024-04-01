@@ -92,14 +92,25 @@ pipeline {
                 }
             }
         }
-        stage ("Deploy"){
+
+        // The stage used when deploying without HELM Charts
+        // stage ("Deploy"){
+        //     steps {
+        //         script {
+        //             sh "chmod +x ./deploy.sh"
+        //             sh './deploy.sh'
+        //         }
+        //     }
+        // }
+
+        stage(" Deploy ") {
             steps {
                 script {
-                    sh "chmod +x ./deploy.sh"
-                    sh './deploy.sh'
+                    echo '<--------------- Helm Deploy Started --------------->'
+                    sh 'helm install ttrend ttrend-0.1.0.tgz'
+                    echo '<--------------- Helm deploy Ends --------------->'
                 }
             }
         }
-
     }
 }
